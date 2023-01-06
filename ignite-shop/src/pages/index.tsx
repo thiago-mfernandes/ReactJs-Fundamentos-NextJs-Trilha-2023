@@ -11,12 +11,12 @@ import camiseta3 from "../assets/3.png"
 
 export default function Home() {
   // preciso passar uma referencia de um elemento no dom, no caso, o elemento que esta envolta dos slides, para servir de referencia para o array de imagens
-  const [sliderRef] = useKeenSlider({
+  const [ sliderRef ] = useKeenSlider({
     // de dentro do hook eu passo o objeto slides com a quantidade de slides que quero
     slides: {
       perView: 3,
       // retirar os espacamentos dentro do HomeContainer e adicionar aqui, vai pela classe keen-slider, senao da conflito
-      spacing: 48
+      spacing: 48,
     }
   })
 

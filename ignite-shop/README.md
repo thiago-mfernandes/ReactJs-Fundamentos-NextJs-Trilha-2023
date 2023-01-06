@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Pasta pages
 
-## Getting Started
+os arquivos dentro do diretorio pages sao rotas;
+o diretorio pode estar dentro de outra pasta, como /src;
 
-First, run the development server:
+o arquivo pages/index.tsx é o arquivo de entrada, a home;
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Rotas no Next
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Roteamento baseado em arquivos fisicos
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+meu arquivo index corresponde a rota "/";
+meu arquivo produto.tsx corresponde a rota "/produto"
+meu arquivo sucesso.tsx corresponde a rota "/sucesso"
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Parametros na rota
+eu posso ter a pasta /products
+dentro eu tenho o index.tsx. Esse index eh o arquivo principal dessa rota
+se eu colocar um teste.tsx, minha rota products vai ter um /products/teste
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+o nome dos arquivos pode ser parametrizado:
+posso colocar o nome do meu arquivo com o parametro a ser recebido na rota,
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  /product
+    `[id].tsx`
 
-## Learn More
+  como estou em /product, o arquivo exibido sera o index + o parametro
+  pego o parametro da rota utilizando de dentro do next o useRouter
 
-To learn more about Next.js, take a look at the following resources:
+## Stitches
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+lib similar ao styled-components
+deixar o stitches configurado pra fazer o css la no arquivo _document.tsx
+`<style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+pelo lado do servidor Next.js(Node), a funcao getCssText vai executar e retornar dentro da tag style todo o css necessario pra pagina funcionar mesmo com o js desabilitado
 
-## Deploy on Vercel
+##
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
