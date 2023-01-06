@@ -20,6 +20,7 @@ export const Product = styled("a", {
   alignItems: "center",
   justifyContent: "center",
   overflow: "hidden",
+  color: "$gray100",
 
   img: {
     objectFit: "cover"
@@ -44,7 +45,8 @@ export const Product = styled("a", {
     transition: "all 0.2s ease-in-out",
 
     strong: {
-      fontSize: "$lg"
+      fontSize: "$lg",
+      paddingRight: "0.25rem",
     },
 
     span: {
